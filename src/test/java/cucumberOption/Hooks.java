@@ -27,12 +27,12 @@ public class Hooks {
 
 		if (driver == null) {
 			try {
-//				if (browser == null) {
-//					browser = System.getenv("BROWSER");
-//					if (browser == null) {
-//						browser = "firefox";
-//					}
-//				}
+				if (browser == null) {
+					browser = System.getenv("BROWSER");
+					if (browser == null) {
+						browser = "firefox";
+					}
+				}
 
 				switch (browser) {
 				case "chrome":
@@ -65,10 +65,8 @@ public class Hooks {
 					driver = new InternetExplorerDriver();
 					break;
 				default:
-//					WebDriverManager.chromedriver().browserVersion("78.0.3904.70").setup();
-//					driver = new ChromeDriver();
-					System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\browserDrivers\\geckodriver.exe");
-					driver = new FirefoxDriver();
+					WebDriverManager.chromedriver().browserVersion("78.0.3904.70").setup();
+					driver = new ChromeDriver();
 					break;
 				}
 			} catch (UnreachableBrowserException e) {
@@ -79,11 +77,10 @@ public class Hooks {
 			finally {
 				Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
 			}
-			driver.manage().window().maximize();
+
+			driver.get(GlobalConstants.BANK_GURU_URL);
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			driver.get(GlobalConstants.BANK_GURU_REGISTER_URL);
 			log.info("------------- Started the browser -------------");
-			
 		}
 		return driver;
 	}
