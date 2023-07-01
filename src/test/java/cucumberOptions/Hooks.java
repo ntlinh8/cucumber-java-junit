@@ -22,7 +22,7 @@ public class Hooks {
 
 	@Before
 	public synchronized static WebDriver openAndQuitBrowser() {
-		String browser = System.getProperty("BROWSER");
+		String browser = "f";
 		System.out.println("Browser name run by command line = " + browser);
 
 		if (driver == null) {

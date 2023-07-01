@@ -17,17 +17,12 @@ public class PageGeneratorManager {
 		return new HomePO(driver);
 	}
 	
-	
-	static public EditCustomerPO getEditCustomerPage(WebDriver driver) {
-		return new EditCustomerPO(driver);
-	}
-	
-	static public DeleteCustomerPO getDeleteCustomerPage(WebDriver driver) {
-		return new DeleteCustomerPO(driver);
-	}
-	
 	static public RegisterPO getRegisterPage(WebDriver driver) {
 		return new RegisterPO(driver);
+	}
+	
+	static public CommonPageObject getCommonPageObject(WebDriver driver) {
+		return new CommonPageObject(driver);
 	}
 	
 }

@@ -31,4 +31,8 @@ public class RegisterPO  extends BasePage{
 		waitForElementVisible(driver, RegisterUI.PASSWORD_TEXT);
 		return getElementText(driver, RegisterUI.PASSWORD_TEXT).trim();
 	}
+	
+	public void openPageByURL(String url) {
+		openPageUrl(driver, url);
+	}
 }

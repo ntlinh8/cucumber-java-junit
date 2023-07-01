@@ -42,6 +42,6 @@ public class RegisterPageSteps {
 	
 	@When("^Open Login page$")
 	public void openLoginPage(){
-		registerPage.openPageUrl(driver, LoginPageSteps.loginPageURL);
+		registerPage.openPageByURL(LoginPageSteps.loginPageURL);
 	}
 }
