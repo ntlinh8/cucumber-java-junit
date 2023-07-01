@@ -11,7 +11,6 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-<<<<<<< HEAD
 			<name>cucumber.eclipse.builder.stepdefinition</name>
 			<arguments>
 			</arguments>
@@ -23,19 +22,6 @@
 		</buildCommand>
 		<buildCommand>
 			<name>org.eclipse.m2e.core.maven2Builder</name>
-=======
-			<name>org.eclipse.m2e.core.maven2Builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>cucumber.eclipse.builder.stepdefinition</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>cucumber.eclipse.builder.gherkin</name>
->>>>>>> branch 'master' of https://github.com/ntlinh8/cucumber-java-junit.git
 			<arguments>
 			</arguments>
 		</buildCommand>
