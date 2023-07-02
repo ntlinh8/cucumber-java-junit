@@ -22,7 +22,8 @@ public class Hooks {
 
 	@Before
 	public synchronized static WebDriver openAndQuitBrowser() {
-		String browser = "f";
+//		String browser = "f";
+		String browser = System.getProperty("BROWSER");
 		System.out.println("Browser name run by command line = " + browser);
 
 		if (driver == null) {
@@ -72,7 +73,7 @@ public class Hooks {
 			}
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			driver.get(GlobalConstants.BANK_GURU_REGISTER_URL);
+			driver.get(GlobalConstants.BANK_GURU_LOGIN_URL);
 			log.info("------------- Started the browser -------------");
 			
 		}

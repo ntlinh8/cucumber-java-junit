@@ -10,11 +10,11 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/java/features/Learnings",
 		glue="stepDefinations.Learning",
 		monochrome = true,
-		plugin = {"pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber.json"},
+		plugin = {"pretty", "html:target/site/cucumber-report-default", "json:target/site/learning_report1.json"},
 		snippets = SnippetType.CAMELCASE,
-		tags= {"@login_with_example_variable_for_step"}
+		tags= {"@login_no_param"}
 		)
 
-public class TestRunner_Learning {
+public class TestRunner1_Learning {
 
 }
