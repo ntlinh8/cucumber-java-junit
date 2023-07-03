@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
@@ -38,6 +39,26 @@ public class CommonPageObject extends BasePage{
 	public void clickToButtonByValue(String value) {
 		waitForElementClickable(driver, CommonUI.DYNAMIC_BUTTON_BY_VALUE, value);
 		clickToElement(driver, CommonUI.DYNAMIC_BUTTON_BY_VALUE, value);
+	}
+
+	public void pressTabInTextboxByLabel(String textboxLabel) {
+		pressKeyToElement(driver, CommonUI.DYNAMIC_TEXTBOX_BY_LABEL, Keys.TAB, textboxLabel);
+		SleepInSecond(2);
+	}
+	
+	public void pressTabInTextareaByLabel(String textareaLabel) {
+		pressKeyToElement(driver, CommonUI.DYNAMIC_TEXTAREA_BY_LABEL, Keys.TAB, textareaLabel);
+		SleepInSecond(2);
+	}
+
+	public String getErrorMessageByTextboxLabel(String fieldLabel) {
+		waitForElementVisible(driver, CommonUI.DYNAMIC_ERROR_MESSAGE_BY_LABEL, fieldLabel);
+		return getElementText(driver, CommonUI.DYNAMIC_ERROR_MESSAGE_BY_LABEL, fieldLabel);
+	}
+
+	public boolean isTextboxExistByLabel(String fieldLabel) {
+		waitForElementVisible(driver, CommonUI.CUSTOMER_FIELD_LABEL, fieldLabel);
+		return isElementDisplayed(driver, CommonUI.CUSTOMER_FIELD_LABEL, fieldLabel);
 	}
 
 }

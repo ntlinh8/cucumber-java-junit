@@ -23,7 +23,7 @@ public class NewCustomerPageSteps {
 	}
 
 	@Then("^The valid text displayed at \"([^\"]*)\" with value \"([^\"]*)\"$")
-	public void theValidTextDisplayedAtWithValue(String fieldLabel, String expectedText){
+	public void theValidTextDisplayedInTextboxWithValue(String fieldLabel, String expectedText){
 		if(fieldLabel.equals("Email")) {
 			expectedText = CommonPageSteps.email;
 		}

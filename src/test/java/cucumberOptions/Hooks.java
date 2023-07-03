@@ -42,16 +42,18 @@ public class Hooks {
 					break;
 				case "firefox":
 					WebDriverManager.firefoxdriver().setup();
-					System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-					System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+//					System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+//					System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
 					driver = new FirefoxDriver();
 					break;
 				case "hfirefox":
 					WebDriverManager.firefoxdriver().setup();
-					System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-					System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+//					System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+//					System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
 					FirefoxOptions firefoxOptions = new FirefoxOptions();
-					firefoxOptions.setHeadless(true);
+//					firefoxOptions.setHeadless(true);
+					firefoxOptions.addArguments("-headless");
+					firefoxOptions.addArguments("window-size=1920x1080");
 					driver = new FirefoxDriver(firefoxOptions);
 					break;
 				case "ie":
@@ -73,7 +75,7 @@ public class Hooks {
 			}
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			driver.get(GlobalConstants.BANK_GURU_LOGIN_URL);
+			driver.get(GlobalConstants.BANK_GURU_REGISTER_URL);
 			log.info("------------- Started the browser -------------");
 			
 		}
